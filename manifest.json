@@ -1,0 +1,16 @@
+{
+  "name": "Hide Political Facebook Posts (Hebrew)",
+  "manifest_version" : 2,
+  "version": "0.0.1",
+  "description": "When clicked will remove most political posts from your news feed. Along with politics it will also remove posts with common idioms used by hate mogering people. This is a Hebrew version, forked from the original by Jeff Lombard.",
+  "icons": { "128": "icon.png" },
+  "background": {
+    "scripts": ["run.js"]
+  },
+  "permissions": ["http://*.facebook.com/", "https://*.facebook.com/"],
+  "browser_action": {
+    "default_title": "Hide Political Posts (Hebrew)",
+    "default_icon": "icon.png",
+  "author": "Avital Tamir"
+  }
+}
