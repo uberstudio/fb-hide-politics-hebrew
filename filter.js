@@ -40,7 +40,14 @@ var terms = ['ביבי',
              'חמאס',
              'חיזבאללה',
              'עזה',
-             'דאע״ש'
+             'דאע״ש',
+             'ארדן',
+             'ציפי לבני',
+             'הסתה',
+             'ערבים',
+             'פיגוע',
+             'ראש ממשלת',
+             'ראש הממשלה'
             ];
 
 var lastRefresh = null;
@@ -50,14 +57,12 @@ function filter_politics(timestamp) {
     lastRefresh = 0;
   }
   var newRefresh = timestamp.timeStamp;
-  console.log(newRefresh - lastRefresh);
   if (newRefresh - lastRefresh >= 750 || lastRefresh === null){
     for (var story of stories) {
       html = story.innerHTML;
       for (var term of terms){
         var regex_term = new RegExp(term);
         if (regex_term.test(html) === true) {
-          console.log('found term: ', term);
           story.style.display = 'none';
           break;
         }
@@ -66,4 +71,5 @@ function filter_politics(timestamp) {
     lastRefresh = newRefresh;
   }
 }
-document.addEventListener('scroll',filter_politics);
+
+document.addEventListener('scroll', filter_politics, false);
